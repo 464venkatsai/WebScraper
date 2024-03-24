@@ -13,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor
 class Scraper:
     def __init__(self):
         Log.setup_logging()
-        
+
 
     def exportScrapedData(self,data,format="csv",name="data"):
         # Exporting data in CSV, EXCEL AND JSON formats
@@ -36,7 +36,7 @@ class Scraper:
 
 
 
-    def scrape_url(self, url,tag="",class_="",exportData=False,format="csv",name="data"):
+    def scrape_url(self, url,tag="",class_=""):
         try:
             # Getting the html document and making soup for further parsing
             document = requests.get(url, timeout=TIMEOUT)
@@ -47,9 +47,6 @@ class Scraper:
             for tag in soup.find_all(tag,class_=class_):
                 # Preprocessing text like removing extra spaces and lines
                 content.append(tag.text.replace("\n","").replace("  ",""))
-            # Exporting Data
-            if exportData:
-                self.exportScrapedData(content,format,name=name)
 
             return content
         # Logging errors
@@ -61,7 +58,7 @@ class Scraper:
 
 
     # Scraping from multiple urls using Threading to scrape parallely
-    def scrape_multiple_urls(self, urls,exportData=False,format=".csv",names=[]):
+    def scrape_multiple_urls(self, urls):
         dataUrls = []
 
         with ThreadPoolExecutor() as executor:
@@ -75,15 +72,6 @@ class Scraper:
 
                 except Exception as e:
                     Log.ERROR(f"Scraping Multiple Urls : Error retrieving data: {e}")
-
-        # If names are not given then, data1, data2... are the dataset names.
-        if not names:
-            names = ["data"+str(i+1) for i in range(len(urls))]
-            
-        # Exporting in the Custom format
-        if exportData:
-            for i in range(len(dataUrls)):
-                self.exportScrapedData(dataUrls[i],format,name=names[i])
 
         # If data is needed in the list format
         return dataUrls
