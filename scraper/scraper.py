@@ -7,50 +7,85 @@ from .config import BASE_URL, TIMEOUT
 from .utils import Log
 import re
 import pandas
+from concurrent.futures import ThreadPoolExecutor
+
 
 class Scraper:
     def __init__(self):
         Log.setup_logging()
+        
 
-    def REGEX(self,content:list,pattern=r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b'):
-        for i in range(len(content)):
-            content[i] = re.findall(pattern,content[i])
-        return content
-    def scrape_url(self, url,tag="",class_="",regex=True):
+    def exportScrapedData(self,data,format="csv",name="data"):
+        # Exporting data in CSV, EXCEL AND JSON formats
         try:
+            if format=="csv":
+                pandas.DataFrame(data).to_csv(f"./data/{name}.csv")
+
+            elif format=="xlsx":
+                pandas.DataFrame(data).to_excel(f"./data/{name}.xlsx")
+
+            elif format=="json":
+                pandas.DataFrame(data).to_json(f"./data/{name}.json")
+
+            else:
+                Log.ERROR(f'{format} is not Supported')
+                raise f"{format} Format is not Supported"
+        # Logging Error
+        except Exception as e:
+            Log.ERROR(f'Export Error : {e}')
+
+
+
+    def scrape_url(self, url,tag="",class_="",exportData=False,format="csv",name="data"):
+        try:
+            # Getting the html document and making soup for further parsing
             document = requests.get(url, timeout=TIMEOUT)
             document.raise_for_status()
             soup = BeautifulSoup(document.content, 'html.parser')
             content = []
+            # Finding according Tag and className
             for tag in soup.find_all(tag,class_=class_):
+                # Preprocessing text like removing extra spaces and lines
                 content.append(tag.text.replace("\n","").replace("  ",""))
-            return content
+            # Exporting Data
+            if exportData:
+                self.exportScrapedData(content,format,name=name)
 
+            return content
+        # Logging errors
         except Exception as e:
             Log.ERROR(f"Error scraping URL: {url}. {e}")
-
+        # Logging that function terminated
         finally:
             Log.INFO(f"Scrape_url for {url} Ended")
 
-    def scrape_multiple_urls(self, urls):
-        results = []
-        for url in urls:
-            soup = self.scrape_url(url)
-            if soup:
-                results.append(soup)
-        return results
-    
-    def exportScrapedData(self,data,format="csv"):
-        try:
-            if format=="csv":
-                pandas.DataFrame(data).to_csv("./data/data.csv")
-            elif format=="xlsx":
-                pandas.DataFrame(data).to_excel("./data/data.xlsx")
-            elif format=="json":
-                pandas.DataFrame(data).to_json("./data/data.json")
-            else:
-                Log.ERROR(f'{format} is not Supported')
-                raise f"{format} Format is not Supported"
-        except Exception as e:
-            Log.ERROR(f'Export Error : {e}')
 
+    # Scraping from multiple urls using Threading to scrape parallely
+    def scrape_multiple_urls(self, urls,exportData=False,format=".csv",names=[]):
+        dataUrls = []
+
+        with ThreadPoolExecutor() as executor:
+            # All Threads are submitted to executor and started at once
+            futures = [executor.submit(self.scrape_url, url) for url in urls] 
+
+            for future in futures:
+                try:
+                    # Storing all their future result in dataURls when thread is completed
+                    dataUrls.append(future.result())
+
+                except Exception as e:
+                    Log.ERROR(f"Scraping Multiple Urls : Error retrieving data: {e}")
+
+        # If names are not given then, data1, data2... are the dataset names.
+        if not names:
+            names = ["data"+str(i+1) for i in range(len(urls))]
+            
+        # Exporting in the Custom format
+        if exportData:
+            for i in range(len(dataUrls)):
+                self.exportScrapedData(dataUrls[i],format,name=names[i])
+
+        # If data is needed in the list format
+        return dataUrls
+
+    
