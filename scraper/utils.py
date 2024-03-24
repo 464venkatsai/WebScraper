@@ -16,5 +16,3 @@ class Log():
     def ERROR(message):
         logging.error(message)
 
-
-

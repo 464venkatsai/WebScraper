@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from .config import BASE_URL, TIMEOUT
 from .utils import Log
 import re
+import pandas
 
 class Scraper:
     def __init__(self):
@@ -38,3 +39,18 @@ class Scraper:
             if soup:
                 results.append(soup)
         return results
+    
+    def exportScrapedData(self,data,format="csv"):
+        try:
+            if format=="csv":
+                pandas.DataFrame(data).to_csv("./data/data.csv")
+            elif format=="xlsx":
+                pandas.DataFrame(data).to_excel("./data/data.xlsx")
+            elif format=="json":
+                pandas.DataFrame(data).to_json("./data/data.json")
+            else:
+                Log.ERROR(f'{format} is not Supported')
+                raise f"{format} Format is not Supported"
+        except Exception as e:
+            Log.ERROR(f'Export Error : {e}')
+
