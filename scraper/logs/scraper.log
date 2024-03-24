@@ -1,0 +1,53 @@
+2024-03-24 12:10:24,200 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:20:00,555 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:20:19,407 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 0
+2024-03-24 12:20:19,407 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:49:48,688 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 0
+2024-03-24 12:49:48,692 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:57:03,093 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 0
+2024-03-24 12:57:03,093 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:58:14,433 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 0
+2024-03-24 12:58:14,433 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:58:53,214 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:59:13,100 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 12:59:55,205 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:00:37,871 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:02:47,727 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:05:11,819 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:05:57,311 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. expected string or bytes-like object, got 'Tag'
+2024-03-24 13:05:57,311 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:08:49,152 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:10:33,931 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:11:03,459 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:11:46,707 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. list index out of range
+2024-03-24 13:11:46,707 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:11:56,711 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. list index out of range
+2024-03-24 13:11:56,712 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:12:15,572 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:12:33,624 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. list index out of range
+2024-03-24 13:12:33,625 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:46:44,762 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 'str' object has no attribute 'remove'
+2024-03-24 13:46:44,762 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:47:08,284 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 'str' object has no attribute 'remove'
+2024-03-24 13:47:08,284 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:47:31,334 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 'str' object has no attribute 'remove'
+2024-03-24 13:47:31,335 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:48:02,367 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 'str' object has no attribute 'remove'
+2024-03-24 13:48:02,367 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:48:16,022 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 'str' object has no attribute 'remove'
+2024-03-24 13:48:16,022 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:48:42,513 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. 'str' object has no attribute 'remove'
+2024-03-24 13:48:42,514 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:49:55,204 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. list index out of range
+2024-03-24 13:49:55,204 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:50:25,299 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:51:03,718 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:51:28,890 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:51:47,934 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:54:17,052 - ERROR - Error scraping URL: https://www.scrapethissite.com/pages/simple/. cannot access local variable 'tag' where it is not associated with a value
+2024-03-24 13:54:17,052 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:54:51,215 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:59:05,719 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:59:08,187 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:59:10,595 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
+2024-03-24 13:59:12,972 - INFO - Scrape_url for https://www.scrapethissite.com/pages/simple/ Ended
