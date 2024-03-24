@@ -18,6 +18,6 @@ data = {
 
 # If need Export this by using exportScrapedData() 
 # args - data , format , name 
-# scraper.exportScrapedData(data,format='csv')
-# scraper.exportScrapedData(data,format='xlsx')
-# scraper.exportScrapedData(data,format='json')
+scraper.exportScrapedData(data,format='csv')
+scraper.exportScrapedData(data,format='xlsx')
+scraper.exportScrapedData(data,format='json')
